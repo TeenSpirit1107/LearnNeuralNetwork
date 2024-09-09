@@ -196,7 +196,7 @@ from .sparse_adam import SparseAdam
 - My Expectation: less lr leads to
     - less chance of a too large initial loss
     - more epochs until converging
-- My Observation: (Supporting the expectation) When LEARNING_RATE = 0.003, although the initial loss problem barely occurs, it has same performance in converging speed compared with sigmoid.
+- My Observation: (Supporting the expectation) When LEARNING_RATE = 0.003, although the initial loss problem barely occurs, it's converging speed is very unsatisfactory compared with sigmoid.
 
 ## Final Versions
 1. main branch `classifyDiabetes.py` Version 2: is the modified version with a smaller epoch.
