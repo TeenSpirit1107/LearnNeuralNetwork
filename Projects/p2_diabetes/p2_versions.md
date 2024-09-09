@@ -97,7 +97,7 @@ Epoch[40/40],loss:0.591384
 2. Apparently, there's the overfitting problem after epoch 25.
 ### Next Step
 - don't reduce epoch, but reduce learning rate?
-- Problem: Sometimes the initial loss is too large. I believe it's due to some problems in the **optimizer**: the optimizer is designed for sigmoid, so I need to change it into another function corresponding to ReLU.
+- Problem: Sometimes the initial loss is too large. ~~I believe it's due to some problems in the **optimizer**: the optimizer is designed for sigmoid, so I need to change it into another function corresponding to ReLU.~~**Turns out this is a wrong beliefe. SGD is Stochastic Gradient Descent, which applies to all activation functions including sigmoid and ReLU.**
     - Sigmoid optimizer:`optimizer = torch.optim.SGD(model.parameters(), lr=0.01)`
     - Terminal Output
 ```
@@ -112,10 +112,11 @@ Epoch[6/40],loss:65.625000
 
 ## Version 4: ReLU, epoch 40, reduced learning rate
 
-### Step 1: Change the Optimizer.
+### ~~Step 1: Change the Optimizer.~~
+- Actually this is not required. I did this out of some misunderstanding.
 
 #### Step 1.1: Problem: which optimizer correspond to ReLU?
-- I went to the definition of torch.optim, but found none of the following functions have a name directly related to ReLU, only one directly related to sigmoid (SGD).
+- I went to the definition of torch.optim, but found none of the following functions have a name directly related to ReLU, ~~only one directly related to sigmoid (SGD).~~ **turns out SGD is Stochastic Gradient Descent, and has nothing to do with sigmoid. I forgot this.**
 ```python
 from . import 
 lr_scheduler, swa_utils
@@ -178,7 +179,12 @@ from .rprop import Rprop
 from .sgd import SGD
 from .sparse_adam import SparseAdam
 ```
-##### Comment on the response
-#### Step 1.3: Change optimizer.
-
-### Step 2: Change the Learning Rate lr
+##### Comment on GPT's Response
+- It's informative; but my wrong problem misled it.
+- I asked the same question to Baidu's AI again, and found that SGD means not sigmoid.
+#### Step 1.4: 3 other optimizers instead of SGD
+- I tried Adam, AdamW, RMSprop. None of them solve the problem of too large initial loss.
+- So I switched back to SGD.
+- Since the problem is not with SGD, it may probably be with the learning rate.
+### Step 2: Reduce Learning Rate lr; Remain epoch 40.
+- The divergent initial loss still occur sometimes, but it seems less often; and the function converges at epoch 20 eventually.
