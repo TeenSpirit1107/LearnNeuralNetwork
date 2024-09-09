@@ -56,7 +56,7 @@ loss_list = []
 
 # Training
 if __name__ == '__main__':
-    EPOCH_NUM = 100 #modification
+    EPOCH_NUM = 40 #modification
     for epoch in range(EPOCH_NUM):
         # i是一个epoch中第几次迭代,一共756条数据,每个mini_batch为32,所以一个epoch需要迭代23次
         # data获取的数据为(x,y)
