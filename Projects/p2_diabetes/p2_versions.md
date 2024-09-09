@@ -10,7 +10,8 @@
     - gitHub:
 - Data Source: [diabetes糖尿病数据集](https://download.csdn.net/download/ccaoshangfei/88711388?spm=1001.2101.3001.9500)
 ## Version 1: Original Version
-- Loss-Epoch: ![loss-epoch](image/nn_p3_moreModels/1725879921098.png)
+- Loss-Epoch: ![v1 loss-epoch](https://github.com/user-attachments/assets/2324afa9-1bab-4ba9-832d-c4a42b2f4d21)
+
 - Time: About 10 mins.
 - Terminal:
 ```
@@ -27,8 +28,9 @@ Epoch[100/100],loss:0.647016
 ## Next Step
 ### Problem
 1. My graph is weird. Even in the very beginning, it doesn't have the same loss rate as described in the article, which is around 0.8; instead, it starts at bout 0.66, and ends at about 0.64. Not very significant. Could it just be a coincidence from randomly generating the initial parameters?
-    - My Graph: ![loss-epoch](image/nn_p3_moreModels/1725879921098.png)
-    - Author's Graph: ![author's loss-epoch](image/nn_p3_moreModels/1725880120796.png)
+    - My Graph: ![v1 loss-epoch](https://github.com/user-attachments/assets/2324afa9-1bab-4ba9-832d-c4a42b2f4d21)
+    - Author's Graph: ![author's loss-epoch](https://github.com/user-attachments/assets/6273eab3-f91b-445a-a3c1-e4c378e20562)
+
 2. It seems that the epoch is too many. According to the author's graph, the loss rate converge at about 20 epochs.
 ### Solution
 - Solution: Change the epoch number to 40; run the code again. 
@@ -49,8 +51,8 @@ Epoch[39/40],loss:0.647105
 Epoch[40/40],loss:0.644685
 ```
 - Graph
-    - My Graph:! ![my loss-epoch, 40 epochs](image/nn_p3_moreModels/1725880736729.png)
-    - Author's Graph: ![author's loss-epoch, 100 epochs](image/nn_p3_moreModels/1725880120796.png)
+    - My Graph:! ![v2 loss-epoch](https://github.com/user-attachments/assets/4919d204-b9e5-424c-9d19-70d617f3a879)
+    - Author's Graph: ![author's loss-epoch](https://github.com/user-attachments/assets/6273eab3-f91b-445a-a3c1-e4c378e20562)
 ### Next Step
 - Find out whether my Version 1's outcome is a coincidence due to the random initialization of the param.
     - print the random initialized params
@@ -65,8 +67,8 @@ Epoch[40/40],loss:0.644685
 
 ## Version 4: sigmoid change to ReLU, 40 Epochs
 - Graph: 
-    - My Version 4 ![v4](image/nn_p3_moreModels/1725885810064.png)
-    - Author's Version ![author's loss-epoch, 100 epochs](image/nn_p3_moreModels/1725880120796.png)
+    - My Graph: ![v4 loss-epoch](https://github.com/user-attachments/assets/a88a6301-f6a7-423f-91f5-df6bbcc0bc8d)
+    - Author's Graph: ![author's loss-epoch](https://github.com/user-attachments/assets/6273eab3-f91b-445a-a3c1-e4c378e20562)
 - Terminal:
 ```
 Epoch[1/40],loss:0.723948
