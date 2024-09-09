@@ -8,7 +8,7 @@
 - My graph, with 40 epochs.  
   ![40 loss-epoch](https://github.com/user-attachments/assets/2c8a0e51-0340-4882-9654-c9437ab74313)
 ## Modification: diabetes_randomInit.ph
-- 
+- This modified version is not for training model, but for showing the random initial loss caused by the random initialization of parameters. In this model, sometimes the randomly initialized model gives a loss similar to the trained model.
 ### A test result:
 - Graph: ![random initial error](https://github.com/user-attachments/assets/a8bbd1ce-a88d-4596-8dde-7f9a6535629c)
 - Terminal:
