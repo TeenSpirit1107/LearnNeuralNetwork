@@ -186,5 +186,13 @@ from .sparse_adam import SparseAdam
 - I tried Adam, AdamW, RMSprop. None of them solve the problem of too large initial loss.
 - So I switched back to SGD.
 - Since the problem is not with SGD, it may probably be with the learning rate.
-### Step 2: Reduce Learning Rate lr; Remain epoch 40.
+### Step 2: Reduce Learning Rate lr to 0.001; Reduce Epoch to 30
 - The divergent initial loss still occur sometimes, but it seems less often; and the function converges at epoch 20 eventually.
+- Learning Rate 0.01
+    - Graph with epoch 40: ![v4 graph epoch 40](https://github.com/user-attachments/assets/ff5f951c-32ce-4dbe-8d59-817a6d03a0f3)
+    - Graph with epoch 30: ![v3 graph epoch 30](https://github.com/user-attachments/assets/480c4d1e-c730-4507-b13a-f3bea68b17b9)
+
+ 
+## Final Versions
+1. main branch `classifyDiabetes.py` Version 2: is the modified version with a smaller epoch.
+2. proj2_ReLUnotSig `classifyDiabetes.py`, Version 4: is the modified version of the main branch version, using ReLU instead of sigmoid. It converges faster when it performs normally, but some input gives a large initial loss (65). 
