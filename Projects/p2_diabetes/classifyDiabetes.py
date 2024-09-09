@@ -35,13 +35,13 @@ class FNNModel(torch.nn.Module):
         self.linear2 = torch.nn.Linear(6, 4)  # 6维降到4维
         self.linear3 = torch.nn.Linear(4, 2)  # 4维降到2维
         self.linear4 = torch.nn.Linear(2, 1)  # 2w维降到1维
-        self.sigmoid = torch.nn.Sigmoid()  # 可以视其为网络的一层,而不是简单的函数使用
+        self.reLU = torch.nn.ReLU()  # 可以视其为网络的一层,而不是简单的函数使用
 
     def forward(self, x):
-        x = self.sigmoid(self.linear1(x))
-        x = self.sigmoid(self.linear2(x))
-        x = self.sigmoid(self.linear3(x))
-        x = self.sigmoid(self.linear4(x))
+        x = self.reLU(self.linear1(x))
+        x = self.reLU(self.linear2(x))
+        x = self.reLU(self.linear3(x))
+        x = self.reLU(self.linear4(x))
         return x
 
 
