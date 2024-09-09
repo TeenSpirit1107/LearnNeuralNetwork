@@ -192,7 +192,12 @@ from .sparse_adam import SparseAdam
     - Graph with epoch 40: ![v4 graph epoch 40](https://github.com/user-attachments/assets/ff5f951c-32ce-4dbe-8d59-817a6d03a0f3)
     - Graph with epoch 30: ![v3 graph epoch 30](https://github.com/user-attachments/assets/480c4d1e-c730-4507-b13a-f3bea68b17b9)
 
- 
+### Step 3: Even Less lr
+- My Expectation: less lr leads to
+    - less chance of a too large initial loss
+    - more epochs until converging
+- My Observation: (Supporting the expectation) When LEARNING_RATE = 0.003, although the initial loss problem barely occurs, it has same performance in converging speed compared with sigmoid.
+
 ## Final Versions
 1. main branch `classifyDiabetes.py` Version 2: is the modified version with a smaller epoch.
 2. proj2_ReLUnotSig `classifyDiabetes.py`, Version 4: is the modified version of the main branch version, using ReLU instead of sigmoid. It converges faster when it performs normally, but some input gives a large initial loss (65). 
